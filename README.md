@@ -5,8 +5,11 @@
 参考：https://github.com/ctripcorp/apollo/tree/master/scripts/apollo-on-kubernetes
 
 *## 部署规划*
+
 1.本次部署采用apollo 1.6.0版本
+
 2.部署环境： apollo 开启了4 个环境, 即 dev、test-alpha、test-beta、prod
+
 3.各环境服务pod数量规划：
 (1)dev
 config-server:1
@@ -123,27 +126,39 @@ flush privileges;
 *### 2.2 Deploy apollo on kubernetes*
 根据 `kubernetes/` 目录部署。
 部署顺序：
+
 （1）apollo-env-dev/service-mysql-for-apollo-dev-env.yaml
+
 （2）apollo-env-dev/service-apollo-config-server-dev.yaml
+
 （3）apollo-env-dev/service-apollo-admin-server-dev.yaml
 
 （4）apollo-env-prod/service-mysql-for-apollo-prod-env.yaml
+
 （5）apollo-env-prod/service-apollo-config-server-prod.yaml
+
 （6）apollo-env-prod/service-apollo-admin-server-prod.yaml
 
 （7）apollo-env-test-alpha/service-mysql-for-apollo-test-alpha-env.yaml
+
 （8）apollo-env-test-alpha/service-apollo-config-server-test-alpha.yaml
+
 （9）apollo-env-test-alpha/service-apollo-admin-server-test-alpha.yaml
 
 （10）apollo-env-test-beta/service-mysql-for-apollo-test-beta-env.yaml
+
 （11）apollo-env-test-beta/service-apollo-config-server-test-beta.yaml
+
 （12）apollo-env-test-beta/service-apollo-admin-server-test-beta.yaml
 
 （13）service-apollo-portal-server.yaml
 
 注意：
+
 (1) 部署时注意yaml部署配置中的注释，修改正确的namespace地址。
+
 (2) 部署时注意修改为正确的image地址。
+
 (3) 部署时注意修改为正确的数据库地址。
 
 *### 2.4 访问 apollo service*
